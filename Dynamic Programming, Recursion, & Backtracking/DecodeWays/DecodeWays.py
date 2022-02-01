@@ -19,7 +19,7 @@ class Solution(object):
         def recur(s, decode_pointer):
             if decode_pointer >= len(s):
                 return 1
-            
+
             if dp[decode_pointer] > -1:
                 return dp[decode_pointer]
 
@@ -27,7 +27,11 @@ class Solution(object):
             for i in range(1,3):
                 if decode_pointer + i <= len(s):
                     substr = s[decode_pointer:decode_pointer + i]
-                    if int(substr) >= 1 and int(substr) <= 26 and not substr.find('0') == 0:
+                    if (
+                        int(substr) >= 1
+                        and int(substr) <= 26
+                        and substr.find('0') != 0
+                    ):
                         answer += recur(s, decode_pointer+i)
 
             dp[decode_pointer] = answer

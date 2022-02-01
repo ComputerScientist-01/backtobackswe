@@ -23,7 +23,7 @@ class MyLinkedList(object):
             return -1
 
         dummyHead = self.head
-        for i in range(index):
+        for _ in range(index):
             dummyHead = dummyHead.next
         return dummyHead.val
 
@@ -52,7 +52,7 @@ class MyLinkedList(object):
             newNode.next = curr
             self.head = newNode
         else:
-            for i in range(index - 1):
+            for _ in range(index - 1):
                 curr = curr.next
             newNode.next = curr.next
             curr.next = newNode
@@ -66,7 +66,7 @@ class MyLinkedList(object):
         if index == 0:
             self.head = self.head.next
         else:
-            for i in range(index - 1):
+            for _ in range(index - 1):
                 curr = curr.next
             curr.next = curr.next.next
         self.size -= 1

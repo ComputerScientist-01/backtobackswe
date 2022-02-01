@@ -139,8 +139,7 @@ class LinkedList:
 				
 				That is the head of the new reversed linked list.			
 			"""
-            reversedLinkedListHead = prev
-            return reversedLinkedListHead
+            return prev
 
     def reverseLinkedListRecursive(node):
         if not node or node.next is None:
@@ -217,9 +216,7 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
 
-        # Useless pointer to rename for teaching purposes
-        middleNode = slow
-        return middleNode
+        return slow
 
     # k==1 is the last node
     def getKthToLastNodeReference(head, k):
@@ -242,7 +239,7 @@ class LinkedList:
 						   r
 		"""
 
-        for i in range(k):
+        for _ in range(k):
             rightOfWindow = rightOfWindow.next
 
         """
@@ -270,9 +267,7 @@ class LinkedList:
             leftOfWindow = leftOfWindow.next
             rightOfWindow = rightOfWindow.next
 
-        # Useless pointer to rename for teaching purposes
-        kthToLastNode = leftOfWindow
-        return kthToLastNode
+        return leftOfWindow
 
 
 a = ListNode(0)
