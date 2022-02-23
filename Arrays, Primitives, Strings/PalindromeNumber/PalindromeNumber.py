@@ -22,7 +22,7 @@ class Solution(object):
         len_number = math.floor(math.log10(x)) + 1
         msd_mask = math.pow(10, len_number - 1)
         # Every time we check the 1 digit with the last digit
-        for i in range(int(len_number) // 2):
+        for _ in range(int(len_number) // 2):
             if x // msd_mask != x % 10:
                 return False
             x %= msd_mask  # Remove most significant digit of x
